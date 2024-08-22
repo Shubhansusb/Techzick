@@ -414,7 +414,7 @@ const CompanyIntroCard = () => {
             marginBottom: '1em', // Adjusted using em
           }}
         >
-          Techzick, What We Do and How We Do It
+          Why Choose Techzick ?
         </Typography>
         <Typography
           variant="h6"

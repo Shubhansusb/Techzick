@@ -43,15 +43,25 @@ const App = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
-      <div className="relative w-full h-screen overflow-hidden bg-gray-200"> {/* Add a placeholder color */}
+      <div className="relative w-full h-screen overflow-hidden bg-gray-200">
+        {/* Preload the background image */}
+        <link rel="preload" href={backgroundImage} as="image" />
+
+        {/* Placeholder for the background image */}
+        <div className="absolute inset-0 w-full h-full bg-gray-300"></div>
+
         <img
           src={backgroundImage}
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover"
-          loading="eager" // Ensure the image loads quickly
-          style={{ display: 'block' }} // Prevent layout shifts
+          loading="eager"
+          style={{ opacity: 0, transition: 'opacity 1s ease-in-out' }}
+          onLoad={(e) => e.target.style.opacity = 1}
         />
-        <CompanyIntroCard />
+        
+        <div id='companyintro'>
+          <CompanyIntroCard />
+        </div>
       </div>
       <div id="ourofferings">
         <OurOfferings />
