@@ -41,12 +41,10 @@ app.use(express.urlencoded({ extended: true }));
 const router = require('./routes');
 app.use('/api', router);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'src/client/build')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
-// Catch-all handler for any request that doesn't match an API route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 
 // Start the server
