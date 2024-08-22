@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 // import WelcomeSection from './components/WelcomeSection';
 import OurOfferings from './components/OurOfferings';
 import ContactUs from './components/ContactUs';
-import backgroundImage from './assets/79.jpg';
+import backgroundImage from './assets/79compressed.jpg';
 import Testimonials from './components/Testimonials';
 import CompanyIntroCard from './components/CompanyIntroCard';
 
