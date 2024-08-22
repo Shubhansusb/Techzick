@@ -14,7 +14,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import "./styles.css";
 
-const apiUrl = import.meta.env.VITE_SERVER_URL;
+const apiUrl = "https://techzickweb-gyhcgrddg7aebpan.eastus-01.azurewebsites.net";
+
 
 const ContactUs = () => {
   const [formData, setFormData] = React.useState({
@@ -38,7 +39,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('https://techzik-website-dpg3a3d8afcbc7fe.eastus-01.azurewebsites.net/api/submit', {
+      const res = await fetch(`${apiUrl}/api/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
