@@ -1,0 +1,16 @@
+.relative {
+    position: relative;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  
