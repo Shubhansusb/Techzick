@@ -115,7 +115,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import OurOfferings from './components/OurOfferings';
 import ContactUs from './components/ContactUs';
-import backgroundImage from './assets/79compressed.jpg';
+import backgroundImage from './assets/mediumCompressed.jpg';
 import Testimonials from './components/Testimonials';
 import CompanyIntroCard from './components/CompanyIntroCard';
 import './App.css';
