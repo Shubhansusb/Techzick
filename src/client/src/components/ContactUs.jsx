@@ -38,7 +38,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('http://localhost:3000/api/submit', {
+      const res = await fetch('https://techzik-website-dpg3a3d8afcbc7fe.eastus-01.azurewebsites.net/api/submit', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
