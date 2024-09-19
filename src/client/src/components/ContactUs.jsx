@@ -2295,7 +2295,6 @@ import "./styles.css";
 
 const apiUrl = import.meta.env.VITE_HOST;
 const ContactUs = () => {
-  console.log('here is the api url', apiUrl);
   const [formData, setFormData] = React.useState({
     firstName: "",
     lastName: "",
