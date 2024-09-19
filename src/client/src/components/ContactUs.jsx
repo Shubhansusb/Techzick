@@ -2293,9 +2293,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import "./styles.css";
 
-const apiUrl = "https://techzickweb-gyhcgrddg7aebpan.eastus-01.azurewebsites.net";
-
+const apiUrl = import.meta.env.VITE_HOST;
 const ContactUs = () => {
+  console.log('here is the api url', apiUrl);
   const [formData, setFormData] = React.useState({
     firstName: "",
     lastName: "",
