@@ -17,18 +17,70 @@
   position: relative; /* Add this to ensure the background image is contained within the app container */
 }
 
+/* .background-container {
+  background-image: url('./assets/robo_final.png'); 
+  background-size: cover; 
+  background-position: center; 
+  height: 80vh; 
+  width: 100%; 
+  animation: fadeInOut 10s ease-in-out infinite; 
+}
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@media only screen and (min-width: 769px) {
+  .background-container {
+    background-size: 40% auto;
+    background-position: top;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .background-container {
+    height: 60vh; 
+    animation: fadeInOut 10s ease-in-out infinite;
+  }
+} */
+
 .background-container {
   background-image: url('./assets/robo_final.png'); /* Set the background image */
   background-size: cover; /* Scale the image to cover the entire container */
   background-position: center; /* Center the image horizontally and vertically */
   height: 80vh; /* Set the container height to the full viewport height on desktop */
   width: 100%; /* Set the container width to the full viewport width */
+  animation: zoomInOut 10s ease-in-out infinite; /* Add the animation */
+}
+
+/* Define the animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Add a media query to target desktop screens */
 @media only screen and (min-width: 769px) {
   .background-container {
-    background-size: 40% auto; /* Zoom out the image by 20% on desktop */
+    background-size: 40% auto;
     background-position: top;
   }
 }
@@ -37,5 +89,7 @@
 @media only screen and (max-width: 768px) {
   .background-container {
     height: 60vh; /* Set the container height to 60% of the viewport height on mobile */
+    animation: zoomInOut 10s ease-in-out infinite; /* Apply the animation to mobile screens as well */
   }
 }
+
