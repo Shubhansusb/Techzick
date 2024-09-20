@@ -59,7 +59,7 @@
   background-image: url('./assets/robo_final.png'); /* Set the background image */
   background-size: cover; /* Scale the image to cover the entire container */
   background-position: center; /* Center the image horizontally and vertically */
-  height: 80vh; /* Set the container height to the full viewport height on desktop */
+  height: 60vh; /* Set the container height to 60% of the viewport height on mobile */
   width: 100%; /* Set the container width to the full viewport width */
   animation: zoomInOut 10s ease-in-out infinite; /* Add the animation */
 }
@@ -81,15 +81,6 @@
 @media only screen and (min-width: 769px) {
   .background-container {
     background-size: 40% auto;
-    background-position: top;
+    height: 80vh; /* Set the container height to the full viewport height on desktop */
   }
 }
-
-/* Add a media query to target mobile screens */
-@media only screen and (max-width: 768px) {
-  .background-container {
-    height: 60vh; /* Set the container height to 60% of the viewport height on mobile */
-    animation: zoomInOut 10s ease-in-out infinite; /* Apply the animation to mobile screens as well */
-  }
-}
-
