@@ -2610,14 +2610,14 @@ const ContactUs = () => {
         <Box mt={4}>
           <Typography variant="body1">
             Email us at:{" "}
-            <a href="mailto:contact@techzick.com" style={{ color: "#B0B0B0" }}>
-              contact@techzick.com
+            <a href="mailto:Megha3284@gmail.com" style={{ color: "#B0B0B0" }}>
+              Megha3284@gmail.com
             </a>
           </Typography>
           <Typography variant="body1" mt={1}>
             Contact Number:{" "}
             <a href="tel:91-1234567890" style={{ color: "#B0B0B0" }}>
-              91-1234567890
+              91-7678161134
             </a>
           </Typography>
         </Box>
