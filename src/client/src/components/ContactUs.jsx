@@ -2610,8 +2610,8 @@ const ContactUs = () => {
         <Box mt={4}>
           <Typography variant="body1">
             Email us at:{" "}
-            <a href="mailto:Megha3284@gmail.com" style={{ color: "#B0B0B0" }}>
-              Megha3284@gmail.com
+            <a href="mailto:Customerservices@techzick.com" style={{ color: "#B0B0B0" }}>
+              Customerservices@techzick.com
             </a>
           </Typography>
           <Typography variant="body1" mt={1}>

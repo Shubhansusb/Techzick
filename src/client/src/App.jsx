@@ -13,7 +13,7 @@ const App = () => {
 		<div className='app-container'>
 			<Navbar />
 			<CompanyIntroCard />
-			<div className='background-container'></div>
+			{/* <div className='background-container'></div> */}
 
 			<div id='ourofferings'>
 				<OurOfferings />

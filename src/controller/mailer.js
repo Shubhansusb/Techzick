@@ -15,16 +15,16 @@ const mailer = async (req, res) => {
 
         
         const mailOptions = {
-            from: 'shubhansusb90@gmail.com', 
-            to: 'Megha3284@gmail.com', 
-            subject: 'New Contact Form Submission',
-            text: `You have a new submission with the following details: \n
+					from: 'shubhansusb90@gmail.com',
+					to: 'Customerservices@techzick.com',
+					subject: 'New Contact Form Submission',
+					text: `You have a new submission with the following details: \n
                 First Name: ${req.body.firstName} \n
                 Last Name: ${req.body.lastName} \n
                 Email: ${req.body.email} \n
                 Contact Number: ${req.body.contactNumber} \n
-                Requirements: ${req.body.requirements}`, 
-        };
+                Requirements: ${req.body.requirements}`,
+				};
 
         
         const info = await transporter.sendMail(mailOptions);
