@@ -395,7 +395,7 @@ const WhyChooseUs = () => {
             sx={{
               fontFamily: "Open Sans, sans-serif",
               color: "#CCCCCC",
-              marginBottom: "3rem",
+              marginBottom: "2rem",
               fontSize: { xs: "1rem", md: "1.40rem" }, // Increase font size slightly
             }}
           >
@@ -413,14 +413,14 @@ const WhyChooseUs = () => {
                 >
                   <Card
                     sx={{
-                      height: "15rem", // Ensure cards take full height of grid
+                      height: "12rem", // Ensure cards take full height of grid
                       backgroundColor: "#333333",
                       color: "#FFFFFF",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
-                      padding: "2rem",
+                      padding: "1rem",
                       boxShadow: "0px 0.625rem 0.9375rem rgba(0, 0, 0, 0.5)", // Shadow effect for cards
                     }}
                   >

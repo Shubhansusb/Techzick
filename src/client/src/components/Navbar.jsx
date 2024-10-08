@@ -879,7 +879,7 @@ const Navbar = () => {
                 <Button
                   color="inherit"
                   sx={{
-                    fontSize: { xs: '0.9rem', md: '0.8rem' },
+                    fontSize: { xs: '1rem', md: '1rem' },
                     color: '#ffffff',
                     fontWeight: '540',
                     fontFamily: 'Arial, sans-serif', // Simple font for buttons
@@ -937,7 +937,7 @@ const Navbar = () => {
                     sx={{
                       color: '#FC5C7D', // Drawer item color matching gradient
                       textAlign: 'center',
-                      fontSize: '0.8rem',
+                      fontSize: '0.9rem',
                     }}
                   />
                 </Link>
