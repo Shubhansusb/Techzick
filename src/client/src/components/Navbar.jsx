@@ -343,7 +343,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-scroll';
-import TechZik from '../../src/assets/TechZik.png';
+import TechZik from '../../src/assets/TechZik.png`';
 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
