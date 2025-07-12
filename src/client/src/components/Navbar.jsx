@@ -18,8 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-scroll';
-import TechZik from '../../src/assets/TechZik.png';
-
+import logo from '../assets/Techzik.png'; // Adjust the path as necessary
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
   return (
@@ -74,7 +73,7 @@ const Navbar = () => {
                 <Link to="home" smooth={true} duration={1000} spy={true}>
                   <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                     <img 
-                      src={TechZik} 
+                      src={logo}
                       alt="Techzick Logo" 
                       style={{ height: '42px', marginRight: '10px' }} 
                     />
