@@ -76,4 +76,4 @@ jobs:
         with:
           app-name: 'techzickweb'
           slot-name: 'Production'
-          package: ./src
+          package: ./dist
