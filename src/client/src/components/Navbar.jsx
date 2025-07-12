@@ -18,7 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-scroll';
-import logo from '../assets/Techzik.png'; // Adjust the path as necessary
+import logo from '../assets/Techzik.png'; 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
   return (
