@@ -838,7 +838,7 @@ const Navbar = () => {
     setDrawerOpen(false);
   };
 
-  const navItems = ['Why Choose U', 'Our Offerings', 'Testimonials', 'Contact Us'];
+  const navItems = ['Why Choose ', 'Our Offerings', 'Testimonials', 'Contact Us'];
 
   return (
     <>
