@@ -9,14 +9,15 @@ const mailer = async (req, res) => {
             service: 'gmail', 
             auth: {
                 user: 'shubhansusb90@gmail.com', 
-                pass: 'tppt eftw hbtb tgao', 
+                pass: 'ddjo iozq wwll jfeh', 
             },
         });
 
         
         const mailOptions = {
 					from: 'shubhansusb90@gmail.com',
-					to: 'Customerservices@techzick.com',
+					// to: 'Customerservices@techzick.com',
+                    to: 'shubhansusb90@gmail.com',
 					subject: 'New Contact Form Submission',
 					text: `You have a new submission with the following details: \n
                 First Name: ${req.body.firstName} \n
