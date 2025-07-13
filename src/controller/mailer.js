@@ -16,8 +16,8 @@ const mailer = async (req, res) => {
         
         const mailOptions = {
 					from: 'shubhansusb90@gmail.com',
-					// to: 'Customerservices@techzick.com',
-                    to: 'shubhansusb90@gmail.com',
+					to: 'Customerservices@techzick.com',
+                    // to: 'shubhansusb90@gmail.com',
 					subject: 'New Contact Form Submission',
 					text: `You have a new submission with the following details: \n
                 First Name: ${req.body.firstName} \n
