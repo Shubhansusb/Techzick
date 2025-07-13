@@ -9,17 +9,15 @@
 //   IconButton,
 //   Snackbar,
 //   Alert,
-//   useTheme,
-//   Paper
 // } from "@mui/material";
 // import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import EmailIcon from "@mui/icons-material/Email";
-// import PhoneIcon from "@mui/icons-material/Phone";
-// import SendIcon from "@mui/icons-material/Send";
-// import { motion } from "framer-motion";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
+// import "./styles.css";
+
+// const apiUrl = import.meta.env.VITE_HOST;
 // const ContactUs = () => {
-//   const theme = useTheme();
 //   const [formData, setFormData] = React.useState({
 //     firstName: "",
 //     lastName: "",
@@ -30,6 +28,8 @@
 //   const [isSubmitting, setIsSubmitting] = React.useState(false);
 //   const [showSuccess, setShowSuccess] = React.useState(false);
 //   const [showError, setShowError] = React.useState(false);
+
+//   // Validation state
 //   const [formErrors, setFormErrors] = React.useState({
 //     firstName: "",
 //     lastName: "",
@@ -38,6 +38,7 @@
 //     requirements: "",
 //   });
 
+//   // Handle form field changes
 //   const handleChange = (e) => {
 //     setFormData({
 //       ...formData,
@@ -45,10 +46,11 @@
 //     });
 //     setFormErrors({
 //       ...formErrors,
-//       [e.target.name]: "",
+//       [e.target.name]: "", // Reset error on field change
 //     });
 //   };
 
+//   // Validate the form fields
 //   const validate = () => {
 //     let errors = {};
 //     let isValid = true;
@@ -75,10 +77,7 @@
 //       errors.contactNumber = "Contact number is required";
 //       isValid = false;
 //     } else if (!/^\d+$/.test(formData.contactNumber)) {
-//       errors.contactNumber = "Should contain only digits";
-//       isValid = false;
-//     } else if (formData.contactNumber.length < 10) {
-//       errors.contactNumber = "Must be at least 10 digits";
+//       errors.contactNumber = "Contact number should contain only digits";
 //       isValid = false;
 //     }
 
@@ -93,311 +92,9 @@
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
-//     if (!validate()) return;
 
-//     setIsSubmitting(true);
-//     try {
-//       await new Promise(resolve => setTimeout(resolve, 1500));
-//       setShowSuccess(true);
-//     } catch (error) {
-//       setShowError(true);
-//     } finally {
-//       setIsSubmitting(false);
-//       setFormData({
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         contactNumber: "",
-//         requirements: "",
-//       });
-//     }
-//   };
+//     if (!validate()) return; // Stop submission if validation fails
 
-//   return (
-//     <Box
-//       sx={{
-//         backgroundColor: '#f8f9fa',
-//         py: 10,
-//         textAlign: "center",
-//       }}
-//       id="contactus"
-//     >
-//       <Container maxWidth="lg">
-//         <Typography
-//           variant="h3"
-//           gutterBottom
-//           sx={{
-//             fontFamily: "Merriweather, serif",
-//             fontWeight: 700,
-//             mb: 6,
-//             color: theme.palette.text.primary,
-//           }}
-//         >
-//           Contact Us
-//         </Typography>
-
-//         <Grid container spacing={6} justifyContent="center">
-//           <Grid item xs={12} md={5}>
-//             <Paper
-//               elevation={0}
-//               sx={{
-//                 borderRadius: 2,
-//                 backgroundColor: 'transparent',
-//                 p: 4,
-//                 height: '100%',
-//                 display: 'flex',
-//                 flexDirection: 'column',
-//                 justifyContent: 'center',
-//                 textAlign: 'left',
-//               }}
-//             >
-//               <Typography
-//                 variant="h5"
-//                 sx={{
-//                   fontFamily: "Merriweather, serif",
-//                   fontWeight: 600,
-//                   mb: 4,
-//                   color: theme.palette.text.primary,
-//                 }}
-//               >
-//                 Get in touch
-//               </Typography>
-              
-//               <Box sx={{ mb: 4 }}>
-//                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-//                   <EmailIcon sx={{ mr: 2, color: theme.palette.primary.main, fontSize: 24 }} />
-//                   <Box>
-//                     <Typography variant="body1" sx={{ fontWeight: 500, color: theme.palette.text.secondary }}>
-//                       Email
-//                     </Typography>
-//                     <Typography 
-//                       component="a" 
-//                       href="mailto:Customerservices@techzick.com" 
-//                       sx={{ 
-//                         color: theme.palette.primary.main,
-//                         textDecoration: 'none',
-//                         '&:hover': {
-//                           textDecoration: 'underline'
-//                         }
-//                       }}
-//                     >
-//                       Customerservices@techzick.com
-//                     </Typography>
-//                   </Box>
-//                 </Box>
-                
-//                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-//                   <PhoneIcon sx={{ mr: 2, color: theme.palette.primary.main, fontSize: 24 }} />
-//                   <Box>
-//                     <Typography variant="body1" sx={{ fontWeight: 500, color: theme.palette.text.secondary }}>
-//                       Phone
-//                     </Typography>
-//                     <Typography 
-//                       component="a" 
-//                       href="tel:91-7678161134" 
-//                       sx={{ 
-//                         color: theme.palette.primary.main,
-//                         textDecoration: 'none',
-//                         '&:hover': {
-//                           textDecoration: 'underline'
-//                         }
-//                       }}
-//                     >
-//                       +91-7678161134
-//                     </Typography>
-//                   </Box>
-//                 </Box>
-//               </Box>
-              
-//               <Box sx={{ mt: 4 }}>
-//                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 500, color: theme.palette.text.secondary }}>
-//                   Connect with us
-//                 </Typography>
-//                 <Box sx={{ display: 'flex', gap: 1 }}>
-//                   <IconButton
-//                     href="https://www.linkedin.com/in/shubhansu/"
-//                     target="_blank"
-//                     aria-label="LinkedIn"
-//                     sx={{ 
-//                       color: theme.palette.primary.main,
-//                       backgroundColor: 'rgba(25, 118, 210, 0.1)',
-//                       '&:hover': {
-//                         backgroundColor: 'rgba(25, 118, 210, 0.2)',
-//                       },
-//                     }}
-//                   >
-//                     <LinkedInIcon />
-//                   </IconButton>
-//                 </Box>
-//               </Box>
-//             </Paper>
-//           </Grid>
-          
-//           <Grid item xs={12} md={7}>
-//             <Paper
-//               elevation={0}
-//               sx={{
-//                 borderRadius: 2,
-//                 backgroundColor: 'white',
-//                 p: 4,
-//                 boxShadow: '0 8px 30px rgba(0,0,0,0.05)',
-//               }}
-//             >
-//               <form onSubmit={handleSubmit}>
-//                 <Grid container spacing={3}>
-//                   <Grid item xs={12} sm={6}>
-//                     <TextField
-//                       label="First Name"
-//                       variant="outlined"
-//                       name="firstName"
-//                       value={formData.firstName}
-//                       onChange={handleChange}
-//                       fullWidth
-//                       error={!!formErrors.firstName}
-//                       helperText={formErrors.firstName}
-//                     />
-//                   </Grid>
-//                   <Grid item xs={12} sm={6}>
-//                     <TextField
-//                       label="Last Name"
-//                       name="lastName"
-//                       value={formData.lastName}
-//                       onChange={handleChange}
-//                       variant="outlined"
-//                       fullWidth
-//                       error={!!formErrors.lastName}
-//                       helperText={formErrors.lastName}
-//                     />
-//                   </Grid>
-//                   <Grid item xs={12}>
-//                     <TextField
-//                       name="email"
-//                       value={formData.email}
-//                       onChange={handleChange}
-//                       label="Email"
-//                       variant="outlined"
-//                       fullWidth
-//                       error={!!formErrors.email}
-//                       helperText={formErrors.email}
-//                     />
-//                   </Grid>
-//                   <Grid item xs={12}>
-//                     <TextField
-//                       label="Contact Number"
-//                       name="contactNumber"
-//                       value={formData.contactNumber}
-//                       onChange={handleChange}
-//                       variant="outlined"
-//                       fullWidth
-//                       error={!!formErrors.contactNumber}
-//                       helperText={formErrors.contactNumber}
-//                     />
-//                   </Grid>
-//                   <Grid item xs={12}>
-//                     <TextField
-//                       label="How can we help you?"
-//                       name="requirements"
-//                       value={formData.requirements}
-//                       onChange={handleChange}
-//                       variant="outlined"
-//                       fullWidth
-//                       multiline
-//                       rows={4}
-//                       error={!!formErrors.requirements}
-//                       helperText={formErrors.requirements}
-//                     />
-//                   </Grid>
-//                   <Grid item xs={12}>
-//                     <Button
-//                       type="submit"
-//                       variant="contained"
-//                       disabled={isSubmitting}
-//                       endIcon={<SendIcon />}
-//                       sx={{
-//                         py: 1.5,
-//                         px: 4,
-//                         fontWeight: 600,
-//                         fontSize: '1rem',
-//                         width: '100%',
-//                       }}
-//                     >
-//                       {isSubmitting ? "Sending..." : "Send Message"}
-//                     </Button>
-//                   </Grid>
-//                 </Grid>
-//               </form>
-//             </Paper>
-//           </Grid>
-//         </Grid>
-//       </Container>
-
-//       <Snackbar
-//         open={showSuccess}
-//         autoHideDuration={6000}
-//         onClose={() => setShowSuccess(false)}
-//         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-//       >
-//         <Alert onClose={() => setShowSuccess(false)} severity="success">
-//           Thank you for your message! We'll get back to you soon.
-//         </Alert>
-//       </Snackbar>
-      
-//       <Snackbar
-//         open={showError}
-//         autoHideDuration={6000}
-//         onClose={() => setShowError(false)}
-//         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-//       >
-//         <Alert onClose={() => setShowError(false)} severity="error">
-//           There was an error sending your message. Please try again.
-//         </Alert>
-//       </Snackbar>
-//     </Box>
-//   );
-// };
-
-// export default ContactUs;
-// import React from "react";
-// import {
-//   Container,
-//   Grid,
-//   TextField,
-//   Button,
-//   Typography,
-//   Box,
-//   IconButton,
-//   Snackbar,
-//   Alert,
-// } from "@mui/material";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
-// import "./styles.css";
-
-// const apiUrl = import.meta.env.VITE_HOST;
-// const ContactUs = () => {
-//   console.log(apiUrl);
-//   const [formData, setFormData] = React.useState({
-//     firstName: "",
-//     lastName: "",
-//     email: "",
-//     contactNumber: "",
-//     requirements: "",
-//   });
-//   const [isSubmitting, setIsSubmitting] = React.useState(false);
-//   const [showSuccess, setShowSuccess] = React.useState(false);
-//   const [showError, setShowError] = React.useState(false);
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
 //     setIsSubmitting(true);
 
 //     try {
@@ -446,10 +143,6 @@
 //             fontFamily: "Merriweather, serif",
 //             marginBottom: 8,
 //             animation: "fadeIn 2s",
-//             "@keyframes fadeIn": {
-//               "0%": { opacity: 0 },
-//               "100%": { opacity: 1 },
-//             },
 //           }}
 //         >
 //           Contact Us
@@ -464,6 +157,8 @@
 //                 value={formData.firstName}
 //                 onChange={handleChange}
 //                 fullWidth
+//                 error={!!formErrors.firstName}
+//                 helperText={formErrors.firstName}
 //                 InputLabelProps={{
 //                   style: { color: "white" },
 //                 }}
@@ -475,17 +170,6 @@
 //                     "& fieldset": {
 //                       borderColor: "#B0B0B0",
 //                     },
-//                     "&:hover fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&.Mui-focused fieldset": {
-//                       borderColor: "#E0E0E0",
-//                     },
-//                   },
-//                   animation: "slideInLeft 1.5s",
-//                   "@keyframes slideInLeft": {
-//                     "0%": { transform: "translateX(-100%)" },
-//                     "100%": { transform: "translateX(0)" },
 //                   },
 //                 }}
 //               />
@@ -498,29 +182,13 @@
 //                 onChange={handleChange}
 //                 variant="outlined"
 //                 fullWidth
+//                 error={!!formErrors.lastName}
+//                 helperText={formErrors.lastName}
 //                 InputLabelProps={{
 //                   style: { color: "white" },
 //                 }}
 //                 InputProps={{
 //                   style: { color: "white" },
-//                 }}
-//                 sx={{
-//                   "& .MuiOutlinedInput-root": {
-//                     "& fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&:hover fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&.Mui-focused fieldset": {
-//                       borderColor: "#E0E0E0",
-//                     },
-//                   },
-//                   animation: "slideInRight 1.5s",
-//                   "@keyframes slideInRight": {
-//                     "0%": { transform: "translateX(100%)" },
-//                     "100%": { transform: "translateX(0)" },
-//                   },
 //                 }}
 //               />
 //             </Grid>
@@ -532,29 +200,13 @@
 //                 label="Email"
 //                 variant="outlined"
 //                 fullWidth
+//                 error={!!formErrors.email}
+//                 helperText={formErrors.email}
 //                 InputLabelProps={{
 //                   style: { color: "white" },
 //                 }}
 //                 InputProps={{
 //                   style: { color: "white" },
-//                 }}
-//                 sx={{
-//                   "& .MuiOutlinedInput-root": {
-//                     "& fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&:hover fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&.Mui-focused fieldset": {
-//                       borderColor: "#E0E0E0",
-//                     },
-//                   },
-//                   animation: "fadeInUp 1.5s",
-//                   "@keyframes fadeInUp": {
-//                     "0%": { opacity: 0, transform: "translateY(20px)" },
-//                     "100%": { opacity: 1, transform: "translateY(0)" },
-//                   },
 //                 }}
 //               />
 //             </Grid>
@@ -566,29 +218,13 @@
 //                 onChange={handleChange}
 //                 variant="outlined"
 //                 fullWidth
+//                 error={!!formErrors.contactNumber}
+//                 helperText={formErrors.contactNumber}
 //                 InputLabelProps={{
 //                   style: { color: "white" },
 //                 }}
 //                 InputProps={{
 //                   style: { color: "white" },
-//                 }}
-//                 sx={{
-//                   "& .MuiOutlinedInput-root": {
-//                     "& fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&:hover fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&.Mui-focused fieldset": {
-//                       borderColor: "#E0E0E0",
-//                     },
-//                   },
-//                   animation: "fadeInUp 1.5s",
-//                   "@keyframes fadeInUp": {
-//                     "0%": { opacity: 0, transform: "translateY(20px)" },
-//                     "100%": { opacity: 1, transform: "translateY(0)" },
-//                   },
 //                 }}
 //               />
 //             </Grid>
@@ -602,25 +238,13 @@
 //                 fullWidth
 //                 multiline
 //                 rows={4}
+//                 error={!!formErrors.requirements}
+//                 helperText={formErrors.requirements}
 //                 InputLabelProps={{
 //                   style: { color: "white" },
 //                 }}
 //                 InputProps={{
 //                   style: { color: "white" },
-//                 }}
-//                 sx={{
-//                   "& .MuiOutlinedInput-root": {
-//                     "& fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&:hover fieldset": {
-//                       borderColor: "#B0B0B0",
-//                     },
-//                     "&.Mui-focused fieldset": {
-//                       borderColor: "#E0E0E0",
-//                     },
-//                   },
-//                   animation: "fadeInUp 2s",
 //                 }}
 //               />
 //             </Grid>
@@ -636,15 +260,6 @@
 //                     backgroundColor: "#45e0b0", // Slightly lighter on hover
 //                   },
 //                   px: 4,
-//                   animation: "bounceIn 2s",
-//                   "@keyframes bounceIn": {
-//                     "0%, 20%, 40%, 60%, 80%, 100%": {
-//                       transform: "translateY(0)",
-//                     },
-//                     "50%": {
-//                       transform: "translateY(-10px)",
-//                     },
-//                   },
 //                 }}
 //               >
 //                 {isSubmitting ? "Submitting..." : "Submit"}
@@ -660,7 +275,6 @@
 //             alignItems: "center",
 //             mt: 4,
 //             gap: 2,
-//             animation: "fadeIn 5s",
 //           }}
 //         >
 //           <IconButton
@@ -738,8 +352,6 @@
 
 // export default ContactUs;
 
-
-
 import React from "react";
 import {
   Container,
@@ -755,10 +367,23 @@ import {
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
+import { keyframes } from "@emotion/react";
 import "./styles.css";
 
 const apiUrl = import.meta.env.VITE_HOST;
+
+// Animation keyframes
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+`;
+
 const ContactUs = () => {
   const [formData, setFormData] = React.useState({
     firstName: "",
@@ -767,11 +392,10 @@ const ContactUs = () => {
     contactNumber: "",
     requirements: "",
   });
+  
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [showError, setShowError] = React.useState(false);
-
-  // Validation state
   const [formErrors, setFormErrors] = React.useState({
     firstName: "",
     lastName: "",
@@ -780,7 +404,6 @@ const ContactUs = () => {
     requirements: "",
   });
 
-  // Handle form field changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -788,11 +411,10 @@ const ContactUs = () => {
     });
     setFormErrors({
       ...formErrors,
-      [e.target.name]: "", // Reset error on field change
+      [e.target.name]: "",
     });
   };
 
-  // Validate the form fields
   const validate = () => {
     let errors = {};
     let isValid = true;
@@ -835,7 +457,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) return; // Stop submission if validation fails
+    if (!validate()) return;
 
     setIsSubmitting(true);
 
@@ -847,13 +469,13 @@ const ContactUs = () => {
         },
         body: JSON.stringify(formData),
       });
+      
       if (res.ok) {
         setShowSuccess(true);
       } else {
         setShowError(true);
       }
     } catch (error) {
-      console.log(error);
       setShowError(true);
     } finally {
       setIsSubmitting(false);
@@ -870,28 +492,87 @@ const ContactUs = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#1C1C1C", // Matte black background color
+        background: "linear-gradient(135deg, #0f0f0f 0%, #1c1c1c 100%)",
         color: "white",
-        py: 8,
+        py: 10,
         textAlign: "center",
         overflow: "hidden",
+        position: "relative",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "4px",
+          background: "linear-gradient(90deg, #00dbde, #fc00ff)",
+        }
       }}
     >
-      <Container maxWidth="lg">
+      {/* Animated floating elements */}
+      <Box sx={{
+        position: "absolute",
+        top: "20%",
+        left: "5%",
+        width: 100,
+        height: 100,
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(252,0,255,0.1) 0%, rgba(0,0,0,0) 70%)",
+        animation: `${pulse} 8s infinite ease-in-out`,
+      }} />
+      
+      <Box sx={{
+        position: "absolute",
+        bottom: "30%",
+        right: "10%",
+        width: 150,
+        height: 150,
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(0,219,222,0.1) 0%, rgba(0,0,0,0) 70%)",
+        animation: `${pulse} 10s infinite ease-in-out`,
+      }} />
+      
+      <Container maxWidth="md">
         <Typography
           variant="h3"
           gutterBottom
           sx={{
-            fontFamily: "Merriweather, serif",
-            marginBottom: 8,
-            animation: "fadeIn 2s",
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 700,
+            mb: 6,
+            position: "relative",
+            display: "inline-block",
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              bottom: -10,
+              left: "25%",
+              width: "50%",
+              height: "4px",
+              background: "linear-gradient(90deg, #00dbde, #fc00ff)",
+              borderRadius: 2,
+            },
+            animation: `${fadeIn} 0.8s ease-out`,
           }}
         >
           Contact Us
         </Typography>
-        <form onSubmit={handleSubmit}>
+        
+        <Box 
+          component="form" 
+          onSubmit={handleSubmit}
+          sx={{
+            backgroundColor: "rgba(30, 30, 30, 0.7)",
+            backdropFilter: "blur(10px)",
+            borderRadius: 4,
+            p: { xs: 3, md: 5 },
+            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+            animation: `${fadeIn} 0.8s ease-out 0.2s`,
+            animationFillMode: "both",
+          }}
+        >
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} sx={{ animation: `${fadeIn} 0.5s ease-out 0.3s` }}>
               <TextField
                 label="First Name"
                 variant="outlined"
@@ -902,21 +583,32 @@ const ContactUs = () => {
                 error={!!formErrors.firstName}
                 helperText={formErrors.firstName}
                 InputLabelProps={{
-                  style: { color: "white" },
+                  style: { color: "#aaa" },
                 }}
                 InputProps={{
-                  style: { color: "white" },
+                  style: { 
+                    color: "white",
+                    borderRadius: "12px",
+                  },
                 }}
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "#B0B0B0",
+                      borderColor: "#444",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#777",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#00dbde",
+                      boxShadow: "0 0 0 2px rgba(0,219,222,0.2)",
                     },
                   },
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            
+            <Grid item xs={12} sm={6} sx={{ animation: `${fadeIn} 0.5s ease-out 0.4s` }}>
               <TextField
                 label="Last Name"
                 name="lastName"
@@ -927,14 +619,32 @@ const ContactUs = () => {
                 error={!!formErrors.lastName}
                 helperText={formErrors.lastName}
                 InputLabelProps={{
-                  style: { color: "white" },
+                  style: { color: "#aaa" },
                 }}
                 InputProps={{
-                  style: { color: "white" },
+                  style: { 
+                    color: "white",
+                    borderRadius: "12px",
+                  },
+                }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#444",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#777",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#00dbde",
+                      boxShadow: "0 0 0 2px rgba(0,219,222,0.2)",
+                    },
+                  },
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            
+            <Grid item xs={12} sm={6} sx={{ animation: `${fadeIn} 0.5s ease-out 0.5s` }}>
               <TextField
                 name="email"
                 value={formData.email}
@@ -945,14 +655,32 @@ const ContactUs = () => {
                 error={!!formErrors.email}
                 helperText={formErrors.email}
                 InputLabelProps={{
-                  style: { color: "white" },
+                  style: { color: "#aaa" },
                 }}
                 InputProps={{
-                  style: { color: "white" },
+                  style: { 
+                    color: "white",
+                    borderRadius: "12px",
+                  },
+                }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#444",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#777",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#00dbde",
+                      boxShadow: "0 0 0 2px rgba(0,219,222,0.2)",
+                    },
+                  },
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            
+            <Grid item xs={12} sm={6} sx={{ animation: `${fadeIn} 0.5s ease-out 0.6s` }}>
               <TextField
                 label="Contact Number"
                 name="contactNumber"
@@ -963,16 +691,34 @@ const ContactUs = () => {
                 error={!!formErrors.contactNumber}
                 helperText={formErrors.contactNumber}
                 InputLabelProps={{
-                  style: { color: "white" },
+                  style: { color: "#aaa" },
                 }}
                 InputProps={{
-                  style: { color: "white" },
+                  style: { 
+                    color: "white",
+                    borderRadius: "12px",
+                  },
+                }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#444",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#777",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#00dbde",
+                      boxShadow: "0 0 0 2px rgba(0,219,222,0.2)",
+                    },
+                  },
                 }}
               />
             </Grid>
-            <Grid item xs={12}>
+            
+            <Grid item xs={12} sx={{ animation: `${fadeIn} 0.5s ease-out 0.7s` }}>
               <TextField
-                label="Requirements"
+                label="Your Requirements"
                 name="requirements"
                 value={formData.requirements}
                 onChange={handleChange}
@@ -983,81 +729,180 @@ const ContactUs = () => {
                 error={!!formErrors.requirements}
                 helperText={formErrors.requirements}
                 InputLabelProps={{
-                  style: { color: "white" },
+                  style: { color: "#aaa" },
                 }}
                 InputProps={{
-                  style: { color: "white" },
+                  style: { 
+                    color: "white",
+                    borderRadius: "12px",
+                  },
+                }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#444",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#777",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#00dbde",
+                      boxShadow: "0 0 0 2px rgba(0,219,222,0.2)",
+                    },
+                  },
                 }}
               />
             </Grid>
-            <Grid item xs={12}>
+            
+            <Grid item xs={12} sx={{ animation: `${fadeIn} 0.5s ease-out 0.8s` }}>
               <Button
                 type="submit"
                 variant="contained"
                 disabled={isSubmitting}
                 sx={{
-                  backgroundColor: "#E0E0E0", // Accent color to match theme
-                  color: "#1F1C2C", // Darker text color for contrast
+                  background: "linear-gradient(90deg, #00dbde 0%, #fc00ff 100%)",
+                  color: "white",
+                  borderRadius: "50px",
+                  px: 6,
+                  py: 1.5,
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  letterSpacing: "0.5px",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+                  transition: "all 0.4s ease",
                   "&:hover": {
-                    backgroundColor: "#45e0b0", // Slightly lighter on hover
+                    transform: "translateY(-3px)",
+                    boxShadow: "0 7px 20px rgba(0,0,0,0.4)",
+                    background: "linear-gradient(90deg, #00c4c7 0%, #e000e8 100%)",
                   },
-                  px: 4,
+                  "&:disabled": {
+                    background: "linear-gradient(90deg, #008688 0%, #8a008f 100%)",
+                  },
                 }}
               >
-                {isSubmitting ? "Submitting..." : "Submit"}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </Grid>
           </Grid>
-        </form>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            mt: 4,
-            gap: 2,
-          }}
-        >
-          <IconButton
-            href="https://www.linkedin.com/in/shubhansu/"
-            target="_blank"
-            aria-label="LinkedIn"
-            sx={{ color: "#E0E0E0" }} // Light color to contrast with background
-          >
-            <LinkedInIcon sx={{ fontSize: 30 }} />
-          </IconButton>
-          <IconButton
-            href="https://www.instagram.com"
-            target="_blank"
-            aria-label="Instagram"
-            sx={{ color: "#E0E0E0" }} // Light color to contrast with background
-          >
-            <InstagramIcon sx={{ fontSize: 30 }} />
-          </IconButton>
-          <IconButton
-            href="https://wa.me/7678161134"
-            target="_blank"
-            aria-label="WhatsApp"
-            sx={{ color: "#E0E0E0" }} // Light color to contrast with background
-          >
-            <WhatsAppIcon sx={{ fontSize: 30 }} />
-          </IconButton>
         </Box>
 
-        <Box mt={4}>
-          <Typography variant="body1">
-            Email us at:{" "}
-            <a href="mailto:Customerservices@techzick.com" style={{ color: "#B0B0B0" }}>
-              Customerservices@techzick.com
-            </a>
+        {/* Contact Info & Social Links */}
+        <Box
+          sx={{
+            mt: 6,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            animation: `${fadeIn} 0.8s ease-out 0.9s`,
+            animationFillMode: "both",
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 500, color: "#ddd" }}>
+            Connect With Us
           </Typography>
-          <Typography variant="body1" mt={1}>
-            Contact Number:{" "}
-            <a href="tel:91-1234567890" style={{ color: "#B0B0B0" }}>
-              91-7678161134
-            </a>
-          </Typography>
+          
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              mt: 1,
+            }}
+          >
+            <IconButton
+              href="https://www.linkedin.com/in/shubhansu/"
+              target="_blank"
+              aria-label="LinkedIn"
+              sx={{
+                color: "#aaa",
+                backgroundColor: "rgba(255,255,255,0.1)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  color: "#00dbde",
+                  backgroundColor: "rgba(0,219,222,0.1)",
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <LinkedInIcon sx={{ fontSize: 30 }} />
+            </IconButton>
+            <IconButton
+              href="https://www.instagram.com"
+              target="_blank"
+              aria-label="Instagram"
+              sx={{
+                color: "#aaa",
+                backgroundColor: "rgba(255,255,255,0.1)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  color: "#fc00ff",
+                  backgroundColor: "rgba(252,0,255,0.1)",
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <InstagramIcon sx={{ fontSize: 30 }} />
+            </IconButton>
+            <IconButton
+              href="https://wa.me/7678161134"
+              target="_blank"
+              aria-label="WhatsApp"
+              sx={{
+                color: "#aaa",
+                backgroundColor: "rgba(255,255,255,0.1)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  color: "#25D366",
+                  backgroundColor: "rgba(37,211,102,0.1)",
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <WhatsAppIcon sx={{ fontSize: 30 }} />
+            </IconButton>
+          </Box>
+          
+          <Box mt={3} sx={{ color: "#bbb", lineHeight: 1.8 }}>
+            <Typography variant="body1">
+              Email us at:{" "}
+              <a 
+                href="mailto:Megha3284@gmail.com" 
+                style={{ 
+                  color: "#00dbde",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "#fc00ff",
+                    textDecoration: "underline",
+                  }
+                }}
+              >
+                Customerservices@techzick.com
+              </a>
+            </Typography>
+            <Typography variant="body1">
+              Contact Number:{" "}
+              <a 
+                href="tel:91-7678161134" 
+                style={{ 
+                  color: "#00dbde",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "#fc00ff",
+                    textDecoration: "underline",
+                  }
+                }}
+              >
+                +91-7678161134
+              </a>
+            </Typography>
+          </Box>
         </Box>
       </Container>
 
@@ -1066,26 +911,39 @@ const ContactUs = () => {
         open={showSuccess}
         autoHideDuration={6000}
         onClose={() => setShowSuccess(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert
           onClose={() => setShowSuccess(false)}
           severity="success"
-          sx={{ width: "100%" }}
+          sx={{ 
+            width: "100%",
+            backgroundColor: "#00c853",
+            color: "white",
+            fontWeight: 500,
+          }}
         >
-          Thank you for submitting the form, we'll get back to you!
+          Thank you for your message! We'll get back to you soon.
         </Alert>
       </Snackbar>
+      
       <Snackbar
         open={showError}
         autoHideDuration={6000}
         onClose={() => setShowError(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert
           onClose={() => setShowError(false)}
           severity="error"
-          sx={{ width: "100%" }}
+          sx={{ 
+            width: "100%",
+            backgroundColor: "#ff3d00",
+            color: "white",
+            fontWeight: 500,
+          }}
         >
-          There was an error submitting the form. Please try again.
+          There was an error sending your message. Please try again.
         </Alert>
       </Snackbar>
     </Box>
