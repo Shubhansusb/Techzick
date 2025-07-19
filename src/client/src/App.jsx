@@ -10,12 +10,13 @@ const App = () => {
 	return (
 		<div className='app-container'>
 			<Navbar />
-			<CompanyIntroCard />
+			
 			
 
 			<div id='ourofferings'>
 				<OurOfferings />
 			</div>
+			<CompanyIntroCard />
 			<div id='testimonials'>
 				<Testimonials />
 			</div>
